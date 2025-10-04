@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import { cn } from "@/lib/utils";
-import { Code2, Github, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 const navItems = [
@@ -30,7 +30,6 @@ export function Navigation() {
           href="/"
           className="flex items-center gap-2 font-mono font-bold text-lg"
         >
-          <Code2 className="h-6 w-6 text-primary" />
           <span className="text-foreground">fpswagg</span>
         </Link>
 

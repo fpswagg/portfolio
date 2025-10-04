@@ -58,9 +58,33 @@
                 "title": "Sarena",
                 "description": "E-commerce avec ExpressJS, Firebase, Telegram API et Puppeteer"
             },
+            "desingora": {
+                "title": "Desingora",
+                "description": "Site Next.js propre et responsive avec shadcn — vitrine BTP et services."
+            },
+            "benediction-barber": {
+                "title": "Benediction Barber",
+                "description": "Site promotionnel pour un barber shop : services, galerie, contact/réservation et horaires."
+            },
+            "les-saveurs-du-cameroun": {
+                "title": "Les Saveurs Du Cameroun",
+                "description": "Site de présentation restaurant — menu, à propos, réservations, galerie."
+            },
+            "le-grec-man": {
+                "title": "Le Grec Man",
+                "description": "Landing page pour un vendeur de spécialités grecques — menu, horaires, contact."
+            },
+            "demo-site-avocat": {
+                "title": "Démo site pour cabinet d'avocat",
+                "description": "Template/démo — domaines de pratique, profils avocats, contact & prise de rendez-vous."
+            },
             "file-station": {
                 "title": "File Station",
                 "description": "Projet académique Java Swing avec sockets réseau (gestion de fichiers)"
+            },
+            "hospital-management-system": {
+                "title": "Kerry’s Tool (Système de gestion hospitalière)",
+                "description": "Dashboard full-stack pour rendez-vous, dossiers patients et gestion du personnel."
             }
         }
     },
@@ -132,12 +156,28 @@
         "present": "Présent",
         "items": {
             "1": {
+                "title": "Étudiant en Génie Logiciel – HND",
+                "company": "Institut Universitaire Siantou",
+                "location": "Yaoundé, Cameroun",
+                "startDate": "2022",
+                "endDate": "2024",
+                "description": "Formation en Higher National Diploma (HND) en Software Engineering, comprenant des projets académiques, travaux pratiques, algorithmie, architectures logicielles et développement web."
+            },
+            "2": {
                 "title": "Stagiaire Développeur",
                 "company": "Getexpertdev",
                 "location": "Yaoundé, Cameroun",
                 "startDate": "Jan 2024",
                 "endDate": "Feb 2024",
                 "description": "Réalisation d'un CMS sur mesure basé sur WordPress pour des besoins clients. Adaptation à l'écosystème CMS et collaboration sur des livrables concrets."
+            },
+            "3": {
+                "title": "Projet Web – ESSACA",
+                "company": "ESSACA – École Supérieure Spéciale d'Architecture du Cameroun",
+                "location": "Yaoundé, Cameroun",
+                "startDate": "Dec 2024",
+                "endDate": "2025",
+                "description": "Réalisé un site pour ESSACA en fin d’année 2024, suivi de travaux web simples en 2025."
             }
         }
     }
