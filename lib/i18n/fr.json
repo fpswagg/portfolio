@@ -82,6 +82,10 @@
                 "title": "File Station",
                 "description": "Projet académique Java Swing avec sockets réseau (gestion de fichiers)"
             },
+            "agents-mod": {
+                "title": "Agents Mod (Minecraft 1.7.10)",
+                "description": "Mod Forge legacy ajoutant armes, objets, masques et lore (2018–2019)."
+            },
             "hospital-management-system": {
                 "title": "Kerry’s Tool (Système de gestion hospitalière)",
                 "description": "Dashboard full-stack pour rendez-vous, dossiers patients et gestion du personnel."

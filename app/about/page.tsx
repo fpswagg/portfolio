@@ -41,7 +41,7 @@ export default function AboutPage() {
           {/* Photo de profil */}
           <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-4 border-primary/20 flex-shrink-0">
             <Image
-              src="/professional-developer-portrait.png"
+              src="/fp.jpg"
               alt="Essoungou Ndemba François-Philippe"
               fill
               className="object-cover"

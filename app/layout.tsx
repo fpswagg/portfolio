@@ -24,10 +24,22 @@ export const metadata: Metadata = {
     "portfolio",
   ],
   authors: [{ name: "fpswagg" }],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "fpswagg | Développeur Full-Stack",
     description: "Portfolio professionnel de fpswagg",
     type: "website",
+    images: [{ url: "/logo.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "fpswagg | Développeur Full-Stack",
+    description: "Portfolio professionnel de fpswagg",
+    images: ["/logo.png"],
   },
 };
 
