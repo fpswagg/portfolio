@@ -22,7 +22,7 @@
             "startProject": "Démarrer un projet",
             "demo": "Demo",
             "code": "Code",
-            "featured": "Featured",
+            "featured": "À la une",
             "loading": "Chargement...",
             "loadMore": "Charger plus"
         }
@@ -34,7 +34,8 @@
         "description": "Je crée des expériences web modernes et performantes avec Next.js, React et TypeScript. Passionné par le code propre et les interfaces utilisateur élégantes.",
         "techTitle": "Technologies principales",
         "finalCtaTitle": "Travaillons ensemble",
-        "finalCtaText": "Vous avez un projet en tête ? Je serais ravi d'en discuter et de voir comment je peux vous aider à le concrétiser."
+        "finalCtaText": "Vous avez un projet en tête ? Je serais ravi d'en discuter et de voir comment je peux vous aider à le concrétiser.",
+        "codeSnippet": "const developer = {\n  name: \"François-Philippe Essoungou\",\n  role: \"Développeur Full-Stack\",\n  skills: [\"Next.js\", \"React\", \"TypeScript\", \"Node.js\"],\n  passion: \"Créer des solutions élégantes\",\n  status: \"Disponible pour des missions\"\n};"
     },
     "projects": {
         "title": "Mes Projets",
@@ -48,7 +49,7 @@
             "other": "Autres"
         },
         "tabs": {
-            "featured": "Projets Featured",
+            "featured": "Projets à la une",
             "github": "Dépôts GitHub"
         },
         "empty": "Aucun projet trouvé pour cette recherche.",

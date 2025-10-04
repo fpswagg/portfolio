@@ -34,7 +34,8 @@
         "description": "I build modern, high-performance web experiences with Next.js, React and TypeScript. Passionate about clean code and elegant user interfaces.",
         "techTitle": "Core technologies",
         "finalCtaTitle": "Let's work together",
-        "finalCtaText": "Have a project in mind? I'd love to discuss how I can help bring it to life."
+        "finalCtaText": "Have a project in mind? I'd love to discuss how I can help bring it to life.",
+        "codeSnippet": "const developer = {\n  name: \"François-Philippe Essoungou\",\n  role: \"Full-Stack Developer\",\n  skills: [\"Next.js\", \"React\", \"TypeScript\", \"Node.js\"],\n  passion: \"Building elegant solutions\",\n  status: \"Available for hire\"\n};"
     },
     "projects": {
         "title": "My Projects",

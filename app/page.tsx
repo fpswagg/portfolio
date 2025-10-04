@@ -90,15 +90,7 @@ export default function HomePage() {
             <span>~/portfolio</span>
           </div>
           <pre className="text-foreground">
-            <code>
-              {`const developer = {
-  name: "François-Philippe Essoungou",
-  role: "Full-Stack Developer",
-  skills: ["Next.js", "React", "TypeScript", "Node.js"],
-  passion: "Building elegant solutions",
-  status: "Available for hire"
-};`}
-            </code>
+            <code>{t("home.codeSnippet")}</code>
           </pre>
         </motion.div>
       </motion.section>
