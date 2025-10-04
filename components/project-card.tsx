@@ -40,7 +40,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       <Card className="h-full flex flex-col overflow-hidden hover:border-primary/50 transition-colors group">
         {/* Image du projet */}
         {project.image && (
-          <div className="relative h-48 w-full overflow-hidden bg-muted">
+          <div className="relative h-36 md:h-48 w-full overflow-hidden bg-muted">
             <Image
               src={project.image || "/placeholder.svg"}
               alt={project.title}
@@ -59,7 +59,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               </Badge>
             )}
           </div>
-          <CardDescription className="line-clamp-2">
+          <CardDescription className="line-clamp-2 text-sm md:text-base">
             {resolvedDesc}
           </CardDescription>
         </CardHeader>
