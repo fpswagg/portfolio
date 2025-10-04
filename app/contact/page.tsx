@@ -51,7 +51,7 @@ const socialLinks = [
   {
     icon: Twitter,
     label: "Twitter",
-    href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://twitter.com/fpswagg",
+    href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://x.com/fpswagg",
   },
 ];
 

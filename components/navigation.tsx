@@ -28,7 +28,7 @@ export function Navigation() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-mono font-bold text-lg"
+          className="flex items-center gap-2 font-mono font-bold text-lg mx-4"
         >
           <span className="text-foreground">fpswagg</span>
         </Link>
