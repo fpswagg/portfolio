@@ -1,0 +1,166 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "common": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "carousel": {
+            "prevSr": "Previous slide",
+            "nextSr": "Next slide"
+        },
+        "language": {
+            "en": "English",
+            "fr": "Français"
+        },
+        "actions": {
+            "viewProjects": "View my projects",
+            "contactMe": "Contact me",
+            "startProject": "Start a project",
+            "demo": "Demo",
+            "code": "Code",
+            "featured": "Featured",
+            "loading": "Loading...",
+            "loadMore": "Load more"
+        }
+    },
+    "home": {
+        "availableBadge": "Available for new projects",
+        "greetingPrefix": "Hello, I am",
+        "role": "Full-Stack Developer",
+        "description": "I build modern, high-performance web experiences with Next.js, React and TypeScript. Passionate about clean code and elegant user interfaces.",
+        "techTitle": "Core technologies",
+        "finalCtaTitle": "Let's work together",
+        "finalCtaText": "Have a project in mind? I'd love to discuss how I can help bring it to life."
+    },
+    "projects": {
+        "title": "My Projects",
+        "subtitle": "Discover a selection of my recent work and open-source contributions",
+        "searchPlaceholder": "Search by name, description or technology...",
+        "categories": {
+            "all": "All",
+            "web": "Web",
+            "mobile": "Mobile",
+            "tools": "Tools",
+            "other": "Other"
+        },
+        "tabs": {
+            "featured": "Featured Projects",
+            "github": "GitHub Repos"
+        },
+        "empty": "No projects found for this search.",
+        "items": {
+            "kerrys-tool": {
+                "title": "Kerry's Tool",
+                "description": "Comprehensive hospital management system with patients, appointments and medical records"
+            },
+            "sarena": {
+                "title": "Sarena",
+                "description": "Modern, responsive public website for a company"
+            },
+            "v0-prompt-generator": {
+                "title": "v0.dev Prompt Generator",
+                "description": "Tool to generate optimized prompts for v0.dev"
+            }
+        }
+    },
+    "timeline": {
+        "current": "In progress",
+        "present": "Present",
+        "items": {
+            "1": {
+                "title": "Senior Full-Stack Developer",
+                "company": "Tech Company",
+                "location": "Remote",
+                "startDate": "Jan 2023",
+                "description": "Building modern web apps with Next.js and React. Designing scalable architectures and maintaining critical systems. Collaborating with international teams to deliver high-quality solutions."
+            },
+            "2": {
+                "title": "Full-Stack Developer",
+                "company": "Digital Agency",
+                "location": "Paris, France",
+                "startDate": "Jun 2021",
+                "endDate": "Dec 2022",
+                "description": "Creating websites and apps for various clients. Implementing e-commerce solutions and custom CMS. Performance and accessibility optimization."
+            },
+            "3": {
+                "title": "Frontend Developer",
+                "company": "Startup Tech",
+                "location": "Lyon, France",
+                "startDate": "Jan 2020",
+                "endDate": "May 2021",
+                "description": "Developing responsive, accessible UIs. Integrating REST and GraphQL APIs. Active participation in code reviews and continuous process improvements."
+            }
+        }
+    },
+    "repos": {
+        "fallbackNotice": "Showing cached data. Live GitHub repositories will be available soon.",
+        "errorLoading": "Unable to load GitHub repositories",
+        "viewCode": "View code"
+    },
+    "contact": {
+        "infoLabels": {
+            "email": "Email",
+            "phone": "Phone",
+            "location": "Location"
+        },
+        "title": "Contact me",
+        "subtitle": "Have a question, a project, or just want to chat? Feel free to reach out!",
+        "infoTitle": "Information",
+        "infoDescription": "My contact details",
+        "socialTitle": "Social networks",
+        "socialDescription": "Find me on social media",
+        "availabilityTitle": "Availability",
+        "availabilityText": "I am currently available for new projects and collaborations. Don't hesitate to contact me!",
+        "form": {
+            "sendMessageTitle": "Send me a message",
+            "sendMessageDescription": "Fill out the form below and I'll get back to you shortly",
+            "labels": {
+                "name": "Full name",
+                "email": "Email",
+                "subject": "Subject",
+                "message": "Message"
+            },
+            "timeline": {
+                "current": "In progress",
+                "present": "Present"
+            },
+            "placeholders": {
+                "name": "Your name",
+                "email": "name@example.com",
+                "subject": "Subject of your message",
+                "message": "Your message..."
+            },
+            "submit": "Send message",
+            "successTitle": "Message sent!",
+            "successDesc": "I'll get back to you as soon as possible.",
+            "errorTitle": "Error"
+        }
+    },
+    "about": {
+        "title": "About me",
+        "bio1": "Hello! I'm François-Philippe Essoungou Ndemba, a full-stack developer passionate about building modern and high-performance web experiences.",
+        "bio2": "With several years of experience in web development, I specialize in the React/Next.js ecosystem and modern technologies. I love turning complex ideas into elegant, intuitive solutions.",
+        "bio3": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
+        "ctaContact": "Contact me",
+        "ctaDownload": "Download CV",
+        "skillsTitle": "Technical skills",
+        "timelineTitle": "Professional journey"
+    },
+    "skills": {
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "database": "Databases",
+            "tools": "Tools & DevOps",
+            "other": "Other"
+        }
+    },
+    "mobileNav": {
+        "navigation": "Navigation",
+        "toggleMenuSr": "Toggle menu"
+    }
+}

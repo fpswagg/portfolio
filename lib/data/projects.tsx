@@ -1,17 +1,25 @@
-import type { Project } from "@/lib/types"
+import type { Project } from "@/lib/types";
 
 // Projets seedés localement
 export const seedProjects: Project[] = [
   {
     id: "kerrys-tool",
     title: "Kerry's Tool",
-    description: "Système de gestion hospitalière complet avec gestion des patients, rendez-vous et dossiers médicaux",
+    description:
+      "Système de gestion hospitalière complet avec gestion des patients, rendez-vous et dossiers médicaux",
     longDescription:
       "Application full-stack de gestion hospitalière permettant aux professionnels de santé de gérer efficacement les patients, les rendez-vous et les dossiers médicaux. Intègre un système d'authentification sécurisé et une interface intuitive.",
     image: "/hospital-management-dashboard-interface.jpg",
     demoUrl: "https://kerrys-tool.vercel.app",
     githubUrl: "https://github.com/fpswagg/kerrys-tool",
-    technologies: ["Next.js", "React", "TypeScript", "Prisma", "Supabase", "Tailwind CSS"],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "Supabase",
+      "Tailwind CSS",
+    ],
     category: "web",
     featured: true,
     year: 2024,
@@ -32,7 +40,13 @@ export async function GET(request: Request) {
     image: "/modern-business-website-homepage.jpg",
     demoUrl: "https://sarena.vercel.app",
     githubUrl: "https://github.com/fpswagg/sarena",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
     category: "web",
     featured: true,
     year: 2024,
@@ -55,7 +69,7 @@ export async function GET(request: Request) {
     demoUrl: "https://v0-prompt-gen.vercel.app",
     githubUrl: "https://github.com/fpswagg/v0-prompt-generator",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Zustand"],
-    category: "tool",
+    category: "tools",
     featured: true,
     year: 2024,
     codeSnippet: `// Store Zustand pour la gestion d'état
@@ -65,4 +79,4 @@ const usePromptStore = create((set) => ({
   templates: [],
 }));`,
   },
-]
+];

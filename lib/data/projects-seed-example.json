@@ -8,7 +8,14 @@
       "image": "/hospital-management-dashboard-interface.jpg",
       "demoUrl": "https://kerrys-tool.vercel.app",
       "githubUrl": "https://github.com/fpswagg/kerrys-tool",
-      "technologies": ["Next.js", "React", "TypeScript", "Prisma", "Supabase", "Tailwind CSS"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Prisma",
+        "Supabase",
+        "Tailwind CSS"
+      ],
       "category": "web",
       "featured": true,
       "year": 2024,
@@ -22,7 +29,13 @@
       "image": "/modern-business-website-homepage.jpg",
       "demoUrl": "https://sarena.vercel.app",
       "githubUrl": "https://github.com/fpswagg/sarena",
-      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
       "category": "web",
       "featured": true,
       "year": 2024,
@@ -36,8 +49,14 @@
       "image": "/prompt-generator-tool-interface.jpg",
       "demoUrl": "https://v0-prompt-gen.vercel.app",
       "githubUrl": "https://github.com/fpswagg/v0-prompt-generator",
-      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Zustand"],
-      "category": "tool",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Zustand"
+      ],
+      "category": "tools",
       "featured": true,
       "year": 2024,
       "codeSnippet": "// Store Zustand pour la gestion d'état\nconst usePromptStore = create((set) => ({\n  prompt: \"\",\n  updatePrompt: (text) => set({ prompt: text }),\n  templates: [],\n}));"

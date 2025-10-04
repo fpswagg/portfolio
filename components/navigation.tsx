@@ -1,29 +1,35 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { motion } from "framer-motion"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { cn } from "@/lib/utils"
-import { Code2, Github, Linkedin } from "lucide-react"
+import * as React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageToggle } from "@/components/language-toggle";
+import { cn } from "@/lib/utils";
+import { Code2, Github, Linkedin } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 const navItems = [
-  { href: "/", label: "Accueil" },
-  { href: "/about", label: "À propos" },
-  { href: "/projects", label: "Projets" },
-  { href: "/contact", label: "Contact" },
-]
+  { href: "/", key: "nav.home" },
+  { href: "/about", key: "nav.about" },
+  { href: "/projects", key: "nav.projects" },
+  { href: "/contact", key: "nav.contact" },
+];
 
 export function Navigation() {
-  const pathname = usePathname()
-  const [hoveredPath, setHoveredPath] = React.useState<string | null>(null)
+  const pathname = usePathname();
+  const [hoveredPath, setHoveredPath] = React.useState<string | null>(null);
+  const { t } = useI18n();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-mono font-bold text-lg">
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-mono font-bold text-lg"
+        >
           <Code2 className="h-6 w-6 text-primary" />
           <span className="text-foreground">fpswagg</span>
         </Link>
@@ -31,19 +37,23 @@ export function Navigation() {
         {/* Navigation principale */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => {
-            const isActive = pathname === item.href
+            const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   "relative px-4 py-2 text-sm font-medium transition-colors",
-                  isActive ? "text-primary" : "text-muted-foreground hover:text-foreground",
+                  isActive
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
+                aria-current={isActive ? "page" : undefined}
+                data-active={isActive}
                 onMouseEnter={() => setHoveredPath(item.href)}
                 onMouseLeave={() => setHoveredPath(null)}
               >
-                {item.label}
+                {t(item.key)}
                 {(isActive || hoveredPath === item.href) && (
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
@@ -56,7 +66,7 @@ export function Navigation() {
                   />
                 )}
               </Link>
-            )
+            );
           })}
         </div>
 
@@ -69,20 +79,23 @@ export function Navigation() {
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <Github className="h-5 w-5" />
-            <span className="sr-only">GitHub</span>
+            <span className="sr-only">{t("common.github")}</span>
           </Link>
           <Link
-            href={process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com"}
+            href={
+              process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com"
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <Linkedin className="h-5 w-5" />
-            <span className="sr-only">LinkedIn</span>
+            <span className="sr-only">{t("common.linkedin")}</span>
           </Link>
+          <LanguageToggle />
           <ThemeToggle />
         </div>
       </nav>
     </header>
-  )
+  );
 }

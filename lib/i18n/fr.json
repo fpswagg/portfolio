@@ -1,0 +1,162 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "projects": "Projets",
+        "contact": "Contact"
+    },
+    "common": {
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "carousel": {
+            "prevSr": "Diapositive précédente",
+            "nextSr": "Diapositive suivante"
+        },
+        "language": {
+            "en": "English",
+            "fr": "Français"
+        },
+        "actions": {
+            "viewProjects": "Voir mes projets",
+            "contactMe": "Me contacter",
+            "startProject": "Démarrer un projet",
+            "demo": "Demo",
+            "code": "Code",
+            "featured": "Featured",
+            "loading": "Chargement...",
+            "loadMore": "Charger plus"
+        }
+    },
+    "home": {
+        "availableBadge": "Disponible pour de nouveaux projets",
+        "greetingPrefix": "Bonjour, je suis",
+        "role": "Développeur Full-Stack",
+        "description": "Je crée des expériences web modernes et performantes avec Next.js, React et TypeScript. Passionné par le code propre et les interfaces utilisateur élégantes.",
+        "techTitle": "Technologies principales",
+        "finalCtaTitle": "Travaillons ensemble",
+        "finalCtaText": "Vous avez un projet en tête ? Je serais ravi d'en discuter et de voir comment je peux vous aider à le concrétiser."
+    },
+    "projects": {
+        "title": "Mes Projets",
+        "subtitle": "Découvrez une sélection de mes projets récents et contributions open-source",
+        "searchPlaceholder": "Rechercher par nom, description ou technologie...",
+        "categories": {
+            "all": "Tous",
+            "web": "Web",
+            "mobile": "Mobile",
+            "tools": "Outils",
+            "other": "Autres"
+        },
+        "tabs": {
+            "featured": "Projets Featured",
+            "github": "Dépôts GitHub"
+        },
+        "empty": "Aucun projet trouvé pour cette recherche.",
+        "items": {
+            "kerrys-tool": {
+                "title": "Kerry's Tool",
+                "description": "Système de gestion hospitalière complet avec gestion des patients, rendez-vous et dossiers médicaux"
+            },
+            "sarena": {
+                "title": "Sarena",
+                "description": "Site web public moderne et responsive pour une entreprise"
+            },
+            "v0-prompt-generator": {
+                "title": "Générateur de prompts v0.dev",
+                "description": "Outil pour générer des prompts optimisés pour v0.dev"
+            }
+        }
+    },
+    "repos": {
+        "fallbackNotice": "Affichage des données en cache. Les dépôts GitHub en temps réel seront disponibles prochainement.",
+        "errorLoading": "Impossible de charger les dépôts GitHub",
+        "viewCode": "Voir le code"
+    },
+    "contact": {
+        "infoLabels": {
+            "email": "Email",
+            "phone": "Téléphone",
+            "location": "Localisation"
+        },
+        "title": "Contactez-moi",
+        "subtitle": "Une question, un projet ou simplement envie de discuter ? N'hésitez pas à me contacter !",
+        "infoTitle": "Informations",
+        "infoDescription": "Mes coordonnées de contact",
+        "socialTitle": "Réseaux sociaux",
+        "socialDescription": "Retrouvez-moi sur les réseaux",
+        "availabilityTitle": "Disponibilité",
+        "availabilityText": "Je suis actuellement disponible pour de nouveaux projets et collaborations. N'hésitez pas à me contacter !",
+        "form": {
+            "sendMessageTitle": "Envoyez-moi un message",
+            "sendMessageDescription": "Remplissez le formulaire ci-dessous et je vous répondrai rapidement",
+            "labels": {
+                "name": "Nom complet",
+                "email": "Email",
+                "subject": "Sujet",
+                "message": "Message"
+            },
+            "placeholders": {
+                "name": "Votre nom",
+                "email": "nom@example.com",
+                "subject": "Sujet de votre message",
+                "message": "Votre message..."
+            },
+            "submit": "Envoyer le message",
+            "successTitle": "Message envoyé !",
+            "successDesc": "Je vous répondrai dans les plus brefs délais.",
+            "errorTitle": "Erreur"
+        }
+    },
+    "about": {
+        "title": "À propos de moi",
+        "bio1": "Bonjour ! Je suis François-Philippe Essoungou Ndemba, développeur full-stack passionné par la création d'expériences web modernes et performantes.",
+        "bio2": "Avec plusieurs années d'expérience dans le développement web, je me spécialise dans l'écosystème React/Next.js et les technologies modernes. J'aime transformer des idées complexes en solutions élégantes et intuitives.",
+        "bio3": "Quand je ne code pas, vous me trouverez en train d'explorer de nouvelles technologies, de contribuer à des projets open-source, ou de partager mes connaissances avec la communauté des développeurs.",
+        "ctaContact": "Me contacter",
+        "ctaDownload": "Télécharger CV",
+        "skillsTitle": "Compétences techniques",
+        "timelineTitle": "Parcours professionnel"
+    },
+    "skills": {
+        "categories": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "database": "Bases de données",
+            "tools": "Outils & DevOps",
+            "other": "Autres"
+        }
+    },
+    "mobileNav": {
+        "navigation": "Navigation",
+        "toggleMenuSr": "Ouvrir le menu"
+    },
+    "timeline": {
+        "current": "En cours",
+        "present": "Présent",
+        "items": {
+            "1": {
+                "title": "Développeur Full-Stack Senior",
+                "company": "Tech Company",
+                "location": "Remote",
+                "startDate": "Jan 2023",
+                "description": "Développement d'applications web modernes avec Next.js et React. Conception d'architectures scalables et maintenance de systèmes critiques. Collaboration avec des équipes internationales pour livrer des solutions de haute qualité."
+            },
+            "2": {
+                "title": "Développeur Full-Stack",
+                "company": "Digital Agency",
+                "location": "Paris, France",
+                "startDate": "Jun 2021",
+                "endDate": "Dec 2022",
+                "description": "Création de sites web et d'applications pour divers clients. Implémentation de solutions e-commerce et de systèmes de gestion de contenu personnalisés. Optimisation des performances et de l'accessibilité."
+            },
+            "3": {
+                "title": "Développeur Frontend",
+                "company": "Startup Tech",
+                "location": "Lyon, France",
+                "startDate": "Jan 2020",
+                "endDate": "May 2021",
+                "description": "Développement d'interfaces utilisateur réactives et accessibles. Intégration d'APIs REST et GraphQL. Participation active aux revues de code et à l'amélioration continue des processus de développement."
+            }
+        }
+    }
+}

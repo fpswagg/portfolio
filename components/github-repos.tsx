@@ -1,52 +1,61 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { motion } from "framer-motion"
-import { ExternalLink, Github, Star, GitFork, AlertCircle } from "lucide-react"
-import type { GitHubRepo } from "@/lib/types"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import Link from "next/link"
+import * as React from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Star, GitFork, AlertCircle } from "lucide-react";
+import type { GitHubRepo } from "@/lib/types";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import Link from "next/link";
+import { useI18n } from "@/lib/i18n";
 
 export function GitHubRepos() {
-  const [repos, setRepos] = React.useState<GitHubRepo[]>([])
-  const [loading, setLoading] = React.useState(true)
-  const [error, setError] = React.useState<string | null>(null)
-  const [page, setPage] = React.useState(1)
-  const [hasMore, setHasMore] = React.useState(false)
-  const [isFallback, setIsFallback] = React.useState(false)
+  const { t } = useI18n();
+  const [repos, setRepos] = React.useState<GitHubRepo[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
+  const [page, setPage] = React.useState(1);
+  const [hasMore, setHasMore] = React.useState(false);
+  const [isFallback, setIsFallback] = React.useState(false);
 
   React.useEffect(() => {
-    fetchRepos()
-  }, [page])
+    fetchRepos();
+  }, [page]);
 
   const fetchRepos = async () => {
     try {
-      setLoading(true)
-      const response = await fetch(`/api/github/repos?page=${page}&per_page=6`)
+      setLoading(true);
+      const response = await fetch(`/api/github/repos?page=${page}&per_page=6`);
 
       if (!response.ok) {
-        throw new Error("Failed to fetch repositories")
+        throw new Error("Failed to fetch repositories");
       }
 
-      const data = await response.json()
-      setRepos((prev) => (page === 1 ? data.repos : [...prev, ...data.repos]))
-      setHasMore(data.hasMore)
-      setIsFallback(data.fallback || false)
-      setError(null)
+      const data = await response.json();
+      setRepos((prev) => (page === 1 ? data.repos : [...prev, ...data.repos]));
+      setHasMore(data.hasMore);
+      setIsFallback(data.fallback || false);
+      setError(null);
     } catch (err) {
-      setError("Impossible de charger les dépôts GitHub")
-      console.error(err)
+      setError(t("repos.errorLoading"));
+      console.error(err);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const loadMore = () => {
-    setPage((prev) => prev + 1)
-  }
+    setPage((prev) => prev + 1);
+  };
 
   if (loading && page === 1) {
     return (
@@ -63,7 +72,7 @@ export function GitHubRepos() {
           </Card>
         ))}
       </div>
-    )
+    );
   }
 
   if (error && repos.length === 0) {
@@ -72,7 +81,7 @@ export function GitHubRepos() {
         <AlertCircle className="h-4 w-4" />
         <AlertDescription>{error}</AlertDescription>
       </Alert>
-    )
+    );
   }
 
   return (
@@ -80,9 +89,7 @@ export function GitHubRepos() {
       {isFallback && (
         <Alert>
           <AlertCircle className="h-4 w-4" />
-          <AlertDescription>
-            Affichage des données en cache. Les dépôts GitHub en temps réel seront disponibles prochainement.
-          </AlertDescription>
+          <AlertDescription>{t("repos.fallbackNotice")}</AlertDescription>
         </Alert>
       )}
 
@@ -100,7 +107,11 @@ export function GitHubRepos() {
                   <Github className="h-5 w-5 text-muted-foreground shrink-0 mt-0.5" />
                   <span className="line-clamp-1">{repo.name}</span>
                 </CardTitle>
-                {repo.description && <CardDescription className="line-clamp-2">{repo.description}</CardDescription>}
+                {repo.description && (
+                  <CardDescription className="line-clamp-2">
+                    {repo.description}
+                  </CardDescription>
+                )}
               </CardHeader>
 
               <CardContent className="flex-1">
@@ -108,7 +119,11 @@ export function GitHubRepos() {
                 {repo.topics && repo.topics.length > 0 && (
                   <div className="flex flex-wrap gap-2 mb-4">
                     {repo.topics.slice(0, 3).map((topic) => (
-                      <Badge key={topic} variant="secondary" className="text-xs">
+                      <Badge
+                        key={topic}
+                        variant="secondary"
+                        className="text-xs"
+                      >
                         {topic}
                       </Badge>
                     ))}
@@ -135,17 +150,30 @@ export function GitHubRepos() {
               </CardContent>
 
               <CardFooter className="flex gap-2">
-                <Button asChild size="sm" variant="outline" className="flex-1 bg-transparent">
-                  <Link href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="flex-1 bg-transparent"
+                >
+                  <Link
+                    href={repo.html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Github className="mr-2 h-4 w-4" />
-                    Voir le code
+                    {t("repos.viewCode")}
                   </Link>
                 </Button>
                 {repo.homepage && (
                   <Button asChild size="sm" className="flex-1">
-                    <Link href={repo.homepage} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={repo.homepage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
+                      {t("common.actions.demo")}
                     </Link>
                   </Button>
                 )}
@@ -158,10 +186,12 @@ export function GitHubRepos() {
       {hasMore && (
         <div className="flex justify-center">
           <Button onClick={loadMore} disabled={loading} variant="outline">
-            {loading ? "Chargement..." : "Charger plus"}
+            {loading
+              ? t("common.actions.loading")
+              : t("common.actions.loadMore")}
           </Button>
         </div>
       )}
     </div>
-  )
+  );
 }

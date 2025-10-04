@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "@/components/theme-provider";
+import { I18nProvider } from "@/lib/i18n";
+import en from "@/lib/i18n/en.json";
+import fr from "@/lib/i18n/fr.json";
 import { Navigation } from "@/components/navigation";
 import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from "react";
@@ -38,18 +41,20 @@ export default function RootLayout({
       <body
         className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Suspense fallback={<div>Loading...</div>}>
-            <Navigation />
-            <main className="min-h-screen">{children}</main>
-            <Toaster />
-          </Suspense>
-        </ThemeProvider>
+        <I18nProvider dictionaries={{ en, fr }} defaultLocale="fr">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Suspense fallback={<div>Loading...</div>}>
+              <Navigation />
+              <main className="min-h-screen">{children}</main>
+              <Toaster />
+            </Suspense>
+          </ThemeProvider>
+        </I18nProvider>
       </body>
     </html>
   );

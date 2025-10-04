@@ -1,31 +1,40 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react"
-import { ContactForm } from "@/components/contact-form"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import Link from "next/link"
+import { motion } from "framer-motion";
+import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Link from "next/link";
+import { useI18n } from "@/lib/i18n";
 
 const contactInfo = [
   {
     icon: Mail,
-    label: "Email",
+    labelKey: "email",
     value: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@fpswagg.dev",
-    href: `mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@fpswagg.dev"}`,
+    href: `mailto:${
+      process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@fpswagg.dev"
+    }`,
   },
   {
     icon: Phone,
-    label: "Téléphone",
+    labelKey: "phone",
     value: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+33 X XX XX XX XX",
     href: `tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE || ""}`,
   },
   {
     icon: MapPin,
-    label: "Localisation",
+    labelKey: "location",
     value: process.env.NEXT_PUBLIC_LOCATION || "France",
     href: null,
   },
-]
+];
 
 const socialLinks = [
   {
@@ -36,22 +45,24 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com/in/fpswagg",
+    href:
+      process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com/in/fpswagg",
   },
   {
     icon: Twitter,
     label: "Twitter",
     href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://twitter.com/fpswagg",
   },
-]
+];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
-}
+};
 
 export default function ContactPage() {
+  const { t } = useI18n();
   return (
     <div className="container mx-auto px-4 py-16 md:py-24">
       {/* Header */}
@@ -61,9 +72,11 @@ export default function ContactPage() {
         transition={{ duration: 0.5 }}
         className="max-w-3xl mx-auto text-center mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Contactez-moi</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          {t("contact.title")}
+        </h1>
         <p className="text-lg text-muted-foreground text-pretty">
-          Une question, un projet ou simplement envie de discuter ? N'hésitez pas à me contacter !
+          {t("contact.subtitle")}
         </p>
       </motion.div>
 
@@ -78,8 +91,8 @@ export default function ContactPage() {
           {/* Coordonnées */}
           <Card>
             <CardHeader>
-              <CardTitle>Informations</CardTitle>
-              <CardDescription>Mes coordonnées de contact</CardDescription>
+              <CardTitle>{t("contact.infoTitle")}</CardTitle>
+              <CardDescription>{t("contact.infoDescription")}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               {contactInfo.map((info) => (
@@ -88,7 +101,9 @@ export default function ContactPage() {
                     <info.icon className="h-4 w-4 text-primary" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-muted-foreground">{info.label}</p>
+                    <p className="text-sm font-medium text-muted-foreground">
+                      {t(`contact.infoLabels.${info.labelKey}`)}
+                    </p>
                     {info.href ? (
                       <Link
                         href={info.href}
@@ -108,8 +123,10 @@ export default function ContactPage() {
           {/* Réseaux sociaux */}
           <Card>
             <CardHeader>
-              <CardTitle>Réseaux sociaux</CardTitle>
-              <CardDescription>Retrouvez-moi sur les réseaux</CardDescription>
+              <CardTitle>{t("contact.socialTitle")}</CardTitle>
+              <CardDescription>
+                {t("contact.socialDescription")}
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               {socialLinks.map((social) => (
@@ -130,13 +147,11 @@ export default function ContactPage() {
           {/* Disponibilité */}
           <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
             <CardHeader>
-              <CardTitle>Disponibilité</CardTitle>
+              <CardTitle>{t("contact.availabilityTitle")}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">
-                Je suis actuellement{" "}
-                <span className="text-foreground font-medium">disponible pour de nouveaux projets</span> et
-                collaborations. N'hésitez pas à me contacter !
+                {t("contact.availabilityText")}
               </p>
             </CardContent>
           </Card>
@@ -151,8 +166,10 @@ export default function ContactPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Envoyez-moi un message</CardTitle>
-              <CardDescription>Remplissez le formulaire ci-dessous et je vous répondrai rapidement</CardDescription>
+              <CardTitle>{t("contact.form.sendMessageTitle")}</CardTitle>
+              <CardDescription>
+                {t("contact.form.sendMessageDescription")}
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <ContactForm />
@@ -161,5 +178,5 @@ export default function ContactPage() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }

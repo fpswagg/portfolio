@@ -1,20 +1,35 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
-import { ExternalLink, Github } from "lucide-react"
-import type { Project } from "@/lib/types"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink, Github } from "lucide-react";
+import type { Project } from "@/lib/types";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { useI18n } from "@/lib/i18n";
 
 interface ProjectCardProps {
-  project: Project
-  index: number
+  project: Project;
+  index: number;
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
+  const { t } = useI18n();
+  const titleKey = `projects.items.${project.id}.title`;
+  const descKey = `projects.items.${project.id}.description`;
+  const tTitle = t(titleKey);
+  const tDesc = t(descKey);
+  const resolvedTitle = tTitle === titleKey ? project.title : tTitle;
+  const resolvedDesc = tDesc === descKey ? project.description : tDesc;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -37,14 +52,16 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         <CardHeader>
           <div className="flex items-start justify-between gap-2">
-            <CardTitle className="text-xl">{project.title}</CardTitle>
+            <CardTitle className="text-xl">{resolvedTitle}</CardTitle>
             {project.featured && (
               <Badge variant="default" className="shrink-0">
-                Featured
+                {t("common.actions.featured")}
               </Badge>
             )}
           </div>
-          <CardDescription className="line-clamp-2">{project.description}</CardDescription>
+          <CardDescription className="line-clamp-2">
+            {resolvedDesc}
+          </CardDescription>
         </CardHeader>
 
         <CardContent className="flex-1">
@@ -75,22 +92,35 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <CardFooter className="flex gap-2">
           {project.demoUrl && (
             <Button asChild size="sm" className="flex-1">
-              <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <ExternalLink className="mr-2 h-4 w-4" />
-                Demo
+                {t("common.actions.demo")}
               </Link>
             </Button>
           )}
           {project.githubUrl && (
-            <Button asChild size="sm" variant="outline" className="flex-1 bg-transparent">
-              <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            <Button
+              asChild
+              size="sm"
+              variant="outline"
+              className="flex-1 bg-transparent"
+            >
+              <Link
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="mr-2 h-4 w-4" />
-                Code
+                {t("common.actions.code")}
               </Link>
             </Button>
           )}
         </CardFooter>
       </Card>
     </motion.div>
-  )
+  );
 }

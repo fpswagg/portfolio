@@ -1,38 +1,43 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { motion } from "framer-motion"
-import { Search } from "lucide-react"
-import { ProjectCard } from "@/components/project-card"
-import { GitHubRepos } from "@/components/github-repos"
-import { seedProjects } from "@/lib/data/projects"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import * as React from "react";
+import { motion } from "framer-motion";
+import { Search } from "lucide-react";
+import { ProjectCard } from "@/components/project-card";
+import { GitHubRepos } from "@/components/github-repos";
+import { seedProjects } from "@/lib/data/projects";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useI18n } from "@/lib/i18n";
 
 const categories = [
   { value: "all", label: "Tous" },
   { value: "web", label: "Web" },
   { value: "mobile", label: "Mobile" },
-  { value: "tool", label: "Outils" },
+  { value: "tools", label: "Outils" },
   { value: "other", label: "Autres" },
-]
+];
 
 export default function ProjectsPage() {
-  const [searchQuery, setSearchQuery] = React.useState("")
-  const [selectedCategory, setSelectedCategory] = React.useState("all")
+  const { t } = useI18n();
+  const [searchQuery, setSearchQuery] = React.useState("");
+  const [selectedCategory, setSelectedCategory] = React.useState("all");
 
   // Filtrer les projets seedés
   const filteredProjects = seedProjects.filter((project) => {
     const matchesSearch =
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.technologies.some((tech) => tech.toLowerCase().includes(searchQuery.toLowerCase()))
+      project.technologies.some((tech) =>
+        tech.toLowerCase().includes(searchQuery.toLowerCase())
+      );
 
-    const matchesCategory = selectedCategory === "all" || project.category === selectedCategory
+    const matchesCategory =
+      selectedCategory === "all" || project.category === selectedCategory;
 
-    return matchesSearch && matchesCategory
-  })
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="container mx-auto px-4 py-16 md:py-24">
@@ -43,9 +48,11 @@ export default function ProjectsPage() {
         transition={{ duration: 0.5 }}
         className="max-w-3xl mx-auto text-center mb-12"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Mes Projets</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          {t("projects.title")}
+        </h1>
         <p className="text-lg text-muted-foreground text-pretty">
-          Découvrez une sélection de mes projets récents et contributions open-source
+          {t("projects.subtitle")}
         </p>
       </motion.div>
 
@@ -62,7 +69,7 @@ export default function ProjectsPage() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Rechercher par nom, description ou technologie..."
+              placeholder={t("projects.searchPlaceholder")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10"
@@ -74,12 +81,14 @@ export default function ProjectsPage() {
             {categories.map((category) => (
               <Button
                 key={category.value}
-                variant={selectedCategory === category.value ? "default" : "outline"}
+                variant={
+                  selectedCategory === category.value ? "default" : "outline"
+                }
                 size="sm"
                 onClick={() => setSelectedCategory(category.value)}
                 className="shrink-0"
               >
-                {category.label}
+                {t(`projects.categories.${category.value}`)}
               </Button>
             ))}
           </div>
@@ -89,8 +98,10 @@ export default function ProjectsPage() {
       {/* Tabs pour projets featured et GitHub */}
       <Tabs defaultValue="featured" className="max-w-7xl mx-auto">
         <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-          <TabsTrigger value="featured">Projets Featured</TabsTrigger>
-          <TabsTrigger value="github">Dépôts GitHub</TabsTrigger>
+          <TabsTrigger value="featured">
+            {t("projects.tabs.featured")}
+          </TabsTrigger>
+          <TabsTrigger value="github">{t("projects.tabs.github")}</TabsTrigger>
         </TabsList>
 
         {/* Projets seedés */}
@@ -103,7 +114,7 @@ export default function ProjectsPage() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">Aucun projet trouvé pour cette recherche.</p>
+              <p className="text-muted-foreground">{t("projects.empty")}</p>
             </div>
           )}
         </TabsContent>
@@ -114,5 +125,5 @@ export default function ProjectsPage() {
         </TabsContent>
       </Tabs>
     </div>
-  )
+  );
 }
