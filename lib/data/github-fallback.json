@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "example-repo-1",
+    "description": "Un exemple de dépôt GitHub",
+    "html_url": "https://github.com/fpswagg/example-repo-1",
+    "homepage": null,
+    "topics": ["react", "nextjs", "typescript"],
+    "language": "TypeScript",
+    "stargazers_count": 5,
+    "forks_count": 2,
+    "updated_at": "2024-01-15T10:30:00Z",
+    "created_at": "2023-12-01T08:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "example-repo-2",
+    "description": "Un autre exemple de dépôt",
+    "html_url": "https://github.com/fpswagg/example-repo-2",
+    "homepage": "https://example-2.vercel.app",
+    "topics": ["nodejs", "express", "mongodb"],
+    "language": "JavaScript",
+    "stargazers_count": 12,
+    "forks_count": 4,
+    "updated_at": "2024-02-20T14:45:00Z",
+    "created_at": "2024-01-10T09:15:00Z"
+  }
+]

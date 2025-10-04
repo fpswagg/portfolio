@@ -1,0 +1,68 @@
+import type { Project } from "@/lib/types"
+
+// Projets seedés localement
+export const seedProjects: Project[] = [
+  {
+    id: "kerrys-tool",
+    title: "Kerry's Tool",
+    description: "Système de gestion hospitalière complet avec gestion des patients, rendez-vous et dossiers médicaux",
+    longDescription:
+      "Application full-stack de gestion hospitalière permettant aux professionnels de santé de gérer efficacement les patients, les rendez-vous et les dossiers médicaux. Intègre un système d'authentification sécurisé et une interface intuitive.",
+    image: "/hospital-management-dashboard-interface.jpg",
+    demoUrl: "https://kerrys-tool.vercel.app",
+    githubUrl: "https://github.com/fpswagg/kerrys-tool",
+    technologies: ["Next.js", "React", "TypeScript", "Prisma", "Supabase", "Tailwind CSS"],
+    category: "web",
+    featured: true,
+    year: 2024,
+    codeSnippet: `// Exemple de route API pour les patients
+export async function GET(request: Request) {
+  const patients = await prisma.patient.findMany({
+    include: { appointments: true }
+  });
+  return Response.json(patients);
+}`,
+  },
+  {
+    id: "sarena",
+    title: "Sarena",
+    description: "Site web public moderne et responsive pour une entreprise",
+    longDescription:
+      "Site web vitrine élégant et performant avec animations fluides, optimisé pour le SEO et l'accessibilité. Design moderne et responsive adapté à tous les appareils.",
+    image: "/modern-business-website-homepage.jpg",
+    demoUrl: "https://sarena.vercel.app",
+    githubUrl: "https://github.com/fpswagg/sarena",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    category: "web",
+    featured: true,
+    year: 2024,
+    codeSnippet: `// Animation de hero avec Framer Motion
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  <h1>Welcome to Sarena</h1>
+</motion.div>`,
+  },
+  {
+    id: "v0-prompt-generator",
+    title: "v0.dev Prompt Generator",
+    description: "Outil pour générer des prompts optimisés pour v0.dev",
+    longDescription:
+      "Application web interactive permettant de créer des prompts structurés et optimisés pour v0.dev. Inclut des templates, des suggestions intelligentes et un aperçu en temps réel.",
+    image: "/prompt-generator-tool-interface.jpg",
+    demoUrl: "https://v0-prompt-gen.vercel.app",
+    githubUrl: "https://github.com/fpswagg/v0-prompt-generator",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Zustand"],
+    category: "tool",
+    featured: true,
+    year: 2024,
+    codeSnippet: `// Store Zustand pour la gestion d'état
+const usePromptStore = create((set) => ({
+  prompt: "",
+  updatePrompt: (text) => set({ prompt: text }),
+  templates: [],
+}));`,
+  },
+]
