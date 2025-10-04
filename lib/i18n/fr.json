@@ -35,7 +35,7 @@
         "techTitle": "Technologies principales",
         "finalCtaTitle": "Travaillons ensemble",
         "finalCtaText": "Vous avez un projet en tête ? Je serais ravi d'en discuter et de voir comment je peux vous aider à le concrétiser.",
-        "codeSnippet": "const developer = {\n  name: \"François-Philippe Essoungou\",\n  role: \"Développeur Full-Stack\",\n  skills: [\"Next.js\", \"React\", \"TypeScript\", \"Node.js\"],\n  passion: \"Créer des solutions élégantes\",\n  status: \"Disponible pour des missions\"\n};"
+        "codeSnippet": "const developer = {\n  name: \"Essoungou Ndemba François-Philippe\",\n  role: \"Développeur Full-Stack (Java & JavaScript)\",\n  skills: [\"Java\", \"Spring Boot\", \"JavaScript\", \"React\", \"Next.js\"],\n  passion: \"Apprendre et créer sur le web et le modding\",\n  status: \"Disponible\"\n};"
     },
     "projects": {
         "title": "Mes Projets",
@@ -54,17 +54,13 @@
         },
         "empty": "Aucun projet trouvé pour cette recherche.",
         "items": {
-            "kerrys-tool": {
-                "title": "Kerry's Tool",
-                "description": "Système de gestion hospitalière complet avec gestion des patients, rendez-vous et dossiers médicaux"
-            },
             "sarena": {
                 "title": "Sarena",
-                "description": "Site web public moderne et responsive pour une entreprise"
+                "description": "E-commerce avec ExpressJS, Firebase, Telegram API et Puppeteer"
             },
-            "v0-prompt-generator": {
-                "title": "Générateur de prompts v0.dev",
-                "description": "Outil pour générer des prompts optimisés pour v0.dev"
+            "file-station": {
+                "title": "File Station",
+                "description": "Projet académique Java Swing avec sockets réseau (gestion de fichiers)"
             }
         }
     },
@@ -110,7 +106,7 @@
     },
     "about": {
         "title": "À propos de moi",
-        "bio1": "Bonjour ! Je suis François-Philippe Essoungou Ndemba, développeur full-stack passionné par la création d'expériences web modernes et performantes.",
+        "bio1": "Bonjour ! Je suis Essoungou Ndemba François-Philippe, développeur full-stack passionné par la création d'expériences web modernes et performantes.",
         "bio2": "Avec plusieurs années d'expérience dans le développement web, je me spécialise dans l'écosystème React/Next.js et les technologies modernes. J'aime transformer des idées complexes en solutions élégantes et intuitives.",
         "bio3": "Quand je ne code pas, vous me trouverez en train d'explorer de nouvelles technologies, de contribuer à des projets open-source, ou de partager mes connaissances avec la communauté des développeurs.",
         "ctaContact": "Me contacter",
@@ -136,27 +132,12 @@
         "present": "Présent",
         "items": {
             "1": {
-                "title": "Développeur Full-Stack Senior",
-                "company": "Tech Company",
-                "location": "À distance",
-                "startDate": "Jan 2023",
-                "description": "Développement d'applications web modernes avec Next.js et React. Conception d'architectures scalables et maintenance de systèmes critiques. Collaboration avec des équipes internationales pour livrer des solutions de haute qualité."
-            },
-            "2": {
-                "title": "Développeur Full-Stack",
-                "company": "Digital Agency",
-                "location": "Paris, France",
-                "startDate": "Jun 2021",
-                "endDate": "Dec 2022",
-                "description": "Création de sites web et d'applications pour divers clients. Implémentation de solutions e-commerce et de systèmes de gestion de contenu personnalisés. Optimisation des performances et de l'accessibilité."
-            },
-            "3": {
-                "title": "Développeur Frontend",
-                "company": "Startup Tech",
-                "location": "Lyon, France",
-                "startDate": "Jan 2020",
-                "endDate": "May 2021",
-                "description": "Développement d'interfaces utilisateur réactives et accessibles. Intégration d'APIs REST et GraphQL. Participation active aux revues de code et à l'amélioration continue des processus de développement."
+                "title": "Stagiaire Développeur",
+                "company": "Getexpertdev",
+                "location": "Yaoundé, Cameroun",
+                "startDate": "Jan 2024",
+                "endDate": "Feb 2024",
+                "description": "Réalisation d'un CMS sur mesure basé sur WordPress pour des besoins clients. Adaptation à l'écosystème CMS et collaboration sur des livrables concrets."
             }
         }
     }

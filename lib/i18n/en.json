@@ -35,7 +35,7 @@
         "techTitle": "Core technologies",
         "finalCtaTitle": "Let's work together",
         "finalCtaText": "Have a project in mind? I'd love to discuss how I can help bring it to life.",
-        "codeSnippet": "const developer = {\n  name: \"François-Philippe Essoungou\",\n  role: \"Full-Stack Developer\",\n  skills: [\"Next.js\", \"React\", \"TypeScript\", \"Node.js\"],\n  passion: \"Building elegant solutions\",\n  status: \"Available for hire\"\n};"
+        "codeSnippet": "const developer = {\n  name: \"Essoungou Ndemba François-Philippe\",\n  role: \"Full-Stack Developer (Java & JavaScript)\",\n  skills: [\"Java\", \"Spring Boot\", \"JavaScript\", \"React\", \"Next.js\"],\n  passion: \"Learning and building across web and modding\",\n  status: \"Available\"\n};"
     },
     "projects": {
         "title": "My Projects",
@@ -54,17 +54,13 @@
         },
         "empty": "No projects found for this search.",
         "items": {
-            "kerrys-tool": {
-                "title": "Kerry's Tool",
-                "description": "Comprehensive hospital management system with patients, appointments and medical records"
-            },
             "sarena": {
                 "title": "Sarena",
-                "description": "Modern, responsive public website for a company"
+                "description": "E-commerce with ExpressJS, Firebase, Telegram API and Puppeteer"
             },
-            "v0-prompt-generator": {
-                "title": "v0.dev Prompt Generator",
-                "description": "Tool to generate optimized prompts for v0.dev"
+            "file-station": {
+                "title": "File Station",
+                "description": "Academic Java Swing project with network sockets (file management)"
             }
         }
     },
@@ -73,27 +69,12 @@
         "present": "Present",
         "items": {
             "1": {
-                "title": "Senior Full-Stack Developer",
-                "company": "Tech Company",
-                "location": "Remote",
-                "startDate": "Jan 2023",
-                "description": "Building modern web apps with Next.js and React. Designing scalable architectures and maintaining critical systems. Collaborating with international teams to deliver high-quality solutions."
-            },
-            "2": {
-                "title": "Full-Stack Developer",
-                "company": "Digital Agency",
-                "location": "Paris, France",
-                "startDate": "Jun 2021",
-                "endDate": "Dec 2022",
-                "description": "Creating websites and apps for various clients. Implementing e-commerce solutions and custom CMS. Performance and accessibility optimization."
-            },
-            "3": {
-                "title": "Frontend Developer",
-                "company": "Startup Tech",
-                "location": "Lyon, France",
-                "startDate": "Jan 2020",
-                "endDate": "May 2021",
-                "description": "Developing responsive, accessible UIs. Integrating REST and GraphQL APIs. Active participation in code reviews and continuous process improvements."
+                "title": "Developer Intern",
+                "company": "Getexpertdev",
+                "location": "Yaounde, Cameroon",
+                "startDate": "Jan 2024",
+                "endDate": "Feb 2024",
+                "description": "Built a custom CMS using WordPress for client needs, adapting to CMS workflows and delivering real-world features."
             }
         }
     },
@@ -125,10 +106,6 @@
                 "subject": "Subject",
                 "message": "Message"
             },
-            "timeline": {
-                "current": "In progress",
-                "present": "Present"
-            },
             "placeholders": {
                 "name": "Your name",
                 "email": "name@example.com",
@@ -143,7 +120,7 @@
     },
     "about": {
         "title": "About me",
-        "bio1": "Hello! I'm François-Philippe Essoungou Ndemba, a full-stack developer passionate about building modern and high-performance web experiences.",
+        "bio1": "Hello! I'm Essoungou Ndemba François-Philippe, a full-stack developer passionate about building modern and high-performance web experiences.",
         "bio2": "With several years of experience in web development, I specialize in the React/Next.js ecosystem and modern technologies. I love turning complex ideas into elegant, intuitive solutions.",
         "bio3": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
         "ctaContact": "Contact me",

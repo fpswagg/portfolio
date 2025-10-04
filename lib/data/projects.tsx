@@ -3,80 +3,44 @@ import type { Project } from "@/lib/types";
 // Projets seedés localement
 export const seedProjects: Project[] = [
   {
-    id: "kerrys-tool",
-    title: "Kerry's Tool",
-    description:
-      "Système de gestion hospitalière complet avec gestion des patients, rendez-vous et dossiers médicaux",
-    longDescription:
-      "Application full-stack de gestion hospitalière permettant aux professionnels de santé de gérer efficacement les patients, les rendez-vous et les dossiers médicaux. Intègre un système d'authentification sécurisé et une interface intuitive.",
-    image: "/hospital-management-dashboard-interface.jpg",
-    demoUrl: "https://kerrys-tool.vercel.app",
-    githubUrl: "https://github.com/fpswagg/kerrys-tool",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Prisma",
-      "Supabase",
-      "Tailwind CSS",
-    ],
-    category: "web",
-    featured: true,
-    year: 2024,
-    codeSnippet: `// Exemple de route API pour les patients
-export async function GET(request: Request) {
-  const patients = await prisma.patient.findMany({
-    include: { appointments: true }
-  });
-  return Response.json(patients);
-}`,
-  },
-  {
     id: "sarena",
     title: "Sarena",
-    description: "Site web public moderne et responsive pour une entreprise",
+    description:
+      "E-commerce avec intégrations ExpressJS, Firebase, Telegram API et Puppeteer",
     longDescription:
-      "Site web vitrine élégant et performant avec animations fluides, optimisé pour le SEO et l'accessibilité. Design moderne et responsive adapté à tous les appareils.",
+      "Plateforme e-commerce intégrant un backend ExpressJS, Firebase (auth/DB/storage), automatisations via Puppeteer et notifications/interaction via Telegram API.",
     image: "/modern-business-website-homepage.jpg",
-    demoUrl: "https://sarena.vercel.app",
+    demoUrl: "",
     githubUrl: "https://github.com/fpswagg/sarena",
     technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
+      "ExpressJS",
+      "Firebase",
+      "Telegram API",
+      "Puppeteer",
       "Tailwind CSS",
-      "Framer Motion",
     ],
     category: "web",
     featured: true,
-    year: 2024,
-    codeSnippet: `// Animation de hero avec Framer Motion
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
->
-  <h1>Welcome to Sarena</h1>
-</motion.div>`,
+    year: 2025,
+    codeSnippet: `// Exemple de bot Telegram minimal
+bot.on('message', (ctx) => ctx.reply('Hello from Sarena!'));`,
   },
   {
-    id: "v0-prompt-generator",
-    title: "v0.dev Prompt Generator",
-    description: "Outil pour générer des prompts optimisés pour v0.dev",
+    id: "file-station",
+    title: "File Station",
+    description:
+      "Projet académique Java Swing avec sockets réseau (gestion de fichiers)",
     longDescription:
-      "Application web interactive permettant de créer des prompts structurés et optimisés pour v0.dev. Inclut des templates, des suggestions intelligentes et un aperçu en temps réel.",
-    image: "/prompt-generator-tool-interface.jpg",
-    demoUrl: "https://v0-prompt-gen.vercel.app",
-    githubUrl: "https://github.com/fpswagg/v0-prompt-generator",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Zustand"],
+      "Application desktop en Java Swing permettant la gestion et le transfert de fichiers via sockets sur un réseau local.",
+    image: "/placeholder.jpg",
+    demoUrl: "",
+    githubUrl: "",
+    technologies: ["Java", "Swing", "Sockets"],
     category: "tools",
-    featured: true,
-    year: 2024,
-    codeSnippet: `// Store Zustand pour la gestion d'état
-const usePromptStore = create((set) => ({
-  prompt: "",
-  updatePrompt: (text) => set({ prompt: text }),
-  templates: [],
-}));`,
+    featured: false,
+    year: 2023,
+    codeSnippet: `// Exemple de serveur socket en Java
+ServerSocket server = new ServerSocket(8080);
+Socket client = server.accept();`,
   },
 ];

@@ -12,7 +12,7 @@ import { Suspense } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "François-Philippe Essoungou | Développeur Full-Stack",
+  title: "fpswagg",
   description:
     "Portfolio professionnel de fpswagg - Développeur Full-Stack spécialisé en Next.js, React, TypeScript et solutions web modernes.",
   keywords: [
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     "TypeScript",
     "portfolio",
   ],
-  authors: [{ name: "François-Philippe Essoungou Ndemba" }],
+  authors: [{ name: "fpswagg" }],
   openGraph: {
-    title: "François-Philippe Essoungou | Développeur Full-Stack",
+    title: "fpswagg | Développeur Full-Stack",
     description: "Portfolio professionnel de fpswagg",
     type: "website",
   },
