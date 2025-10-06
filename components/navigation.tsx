@@ -208,7 +208,7 @@ export function Navigation() {
               <LanguageToggle />
               <ThemeToggle />
             </div>
-            <div className="flex-1" />
+            <div className="flex-1 bg-background" />
           </div>
         </aside>
       )}
