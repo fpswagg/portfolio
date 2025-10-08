@@ -141,56 +141,29 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <aside
-          className="fixed top-0 right-0 bottom-0 left-0 z-[100] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:hidden"
-          aria-modal="true"
-          role="dialog"
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
+          className="md:hidden absolute top-full left-0 right-0 bg-background shadow-lg z-50"
         >
-          {/* Overlay for closing */}
-          <button
-            className="absolute top-0 left-0 w-full h-full bg-black/40 backdrop-blur-sm z-0"
-            aria-label={t("common.close_menu")}
-            tabIndex={-1}
-            onClick={() => setMobileOpen(false)}
-            style={{ outline: "none", border: "none" }}
-          />
-          {/* Drawer panel */}
-          <div className="absolute top-0 right-0 h-full w-4/5 max-w-xs bg-background shadow-xl z-10 flex flex-col">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-              <span className="font-mono font-bold text-lg text-foreground">
-                fpswagg
-              </span>
-              <button
-                className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary"
-                aria-label={t("common.close_menu")}
+          <div className="flex flex-col gap-2 p-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-3 py-2 rounded text-base font-medium transition-colors ${
+                  pathname === item.href
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                }`}
                 onClick={() => setMobileOpen(false)}
               >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-            <nav className="flex flex-col gap-2 mt-6 px-6 bg-background">
-              {navItems.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      "relative px-3 py-2 text-base font-medium rounded transition-colors",
-                      isActive
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-foreground hover:bg-accent"
-                    )}
-                    aria-current={isActive ? "page" : undefined}
-                    data-active={isActive}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {t(item.key)}
-                  </Link>
-                );
-              })}
-            </nav>
-            <div className="flex items-center gap-4 px-6 mt-8 bg-background">
+                {t(item.key)}
+              </Link>
+            ))}
+            <div className="flex items-center gap-3 mt-2">
               {socials.map((social) => (
                 <Link
                   key={social.href}
@@ -199,18 +172,15 @@ export function Navigation() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  <social.icon className="h-6 w-6" />
+                  <social.icon className="h-5 w-5" />
                   <span className="sr-only">{t(social.label)}</span>
                 </Link>
               ))}
-            </div>
-            <div className="flex items-center gap-4 px-6 mt-6 mb-4 bg-background">
               <LanguageToggle />
               <ThemeToggle />
             </div>
-            <div className="flex-1 bg-background" />
           </div>
-        </aside>
+        </motion.div>
       )}
     </header>
   );
