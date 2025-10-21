@@ -22,13 +22,11 @@ export const metadata: Metadata = {
     "React",
     "TypeScript",
     "portfolio",
+    "cameroun",
+    "cameroon"
   ],
   authors: [{ name: "fpswagg" }],
-  icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
+  icons: [{ rel: "icon", url: "/logo.png" }],
   openGraph: {
     title: "fpswagg | Développeur Full-Stack",
     description: "Portfolio professionnel de fpswagg",
