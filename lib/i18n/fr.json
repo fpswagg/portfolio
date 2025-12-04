@@ -155,6 +155,37 @@
         "navigation": "Navigation",
         "toggleMenuSr": "Ouvrir le menu"
     },
+    "testimonials": {
+        "badge": "Témoignages",
+        "title": "Ce que disent les clients",
+        "subtitle": "Retours de clients satisfaits et collaborateurs avec qui j'ai travaillé",
+        "items": {
+            "1": {
+                "name": "Jean-Marc Dubois",
+                "role": "PDG",
+                "company": "TechStart Solutions",
+                "content": "François-Philippe a livré un site web exceptionnel pour notre entreprise. Son souci du détail et son expertise technique ont dépassé nos attentes. Hautement recommandé !"
+            },
+            "2": {
+                "name": "Marie Kouam",
+                "role": "Directrice Marketing",
+                "company": "Creative Agency CM",
+                "content": "Travailler avec François-Philippe a été un plaisir. Il a parfaitement compris notre vision et créé un site moderne et responsive qui représente vraiment notre marque."
+            },
+            "3": {
+                "name": "David Tchamba",
+                "role": "Fondateur",
+                "company": "StartUp Hub",
+                "content": "Professionnel, créatif et fiable. François-Philippe a transformé nos idées en un site web magnifique et fonctionnel. Le projet a été livré dans les délais et le budget."
+            }
+        }
+    },
+    "featuredProjects": {
+        "badge": "Travaux en vedette",
+        "title": "Projets sélectionnés",
+        "subtitle": "Une vitrine de mes travaux récents et projets notables",
+        "viewAll": "Voir tous les projets"
+    },
     "timeline": {
         "current": "En cours",
         "present": "Présent",
