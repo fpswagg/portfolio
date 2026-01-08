@@ -117,7 +117,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* Featured Projects Section */}
       <FeaturedProjectsSection />
