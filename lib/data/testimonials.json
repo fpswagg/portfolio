@@ -62,27 +62,6 @@
         "en": "Founder",
         "fr": "Fondateur"
       }
-    },
-    {
-      "avatar": "/placeholder-user.jpg",
-      "company": {
-        "en": "Company",
-        "fr": "Entreprise"
-      },
-      "content": {
-        "en": "Test_",
-        "fr": "Teste_"
-      },
-      "id": "1776202737557",
-      "name": {
-        "en": "Name",
-        "fr": "Nom"
-      },
-      "rating": 5,
-      "role": {
-        "en": "Role",
-        "fr": "Rôle"
-      }
     }
   ]
 }
