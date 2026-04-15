@@ -11,7 +11,7 @@ interface TimelineProps {
 }
 
 export function Timeline({ experiences }: TimelineProps) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   return (
     <div className="relative">
       {/* Ligne verticale */}
@@ -48,73 +48,33 @@ export function Timeline({ experiences }: TimelineProps) {
                     {t("timeline.current")}
                   </Badge>
                 )}
-                {(() => {
-                  const titleKey = `timeline.items.${exp.id}.title`;
-                  const tTitle = t(titleKey);
-                  const resolved = tTitle === titleKey ? exp.title : tTitle;
-                  return <h3 className="text-xl font-bold mb-2">{resolved}</h3>;
-                })()}
+                <h3 className="text-xl font-bold mb-2">
+                  {exp.title[locale]}
+                </h3>
                 <div className="flex items-center gap-2 text-muted-foreground mb-3 flex-wrap">
-                  {(() => {
-                    const companyKey = `timeline.items.${exp.id}.company`;
-                    const tCompany = t(companyKey);
-                    const resolved =
-                      tCompany === companyKey ? exp.company : tCompany;
-                    return (
-                      <span className="font-medium text-foreground">
-                        {resolved}
-                      </span>
-                    );
-                  })()}
+                  <span className="font-medium text-foreground">
+                    {exp.company[locale]}
+                  </span>
                   {exp.location && (
                     <>
                       <span>•</span>
-                      {(() => {
-                        const locationKey = `timeline.items.${exp.id}.location`;
-                        const tLocation = t(locationKey);
-                        const resolved =
-                          tLocation === locationKey ? exp.location : tLocation;
-                        return (
-                          <span className="flex items-center gap-1">
-                            <MapPin className="h-3 w-3" />
-                            {resolved}
-                          </span>
-                        );
-                      })()}
+                      <span className="flex items-center gap-1">
+                        <MapPin className="h-3 w-3" />
+                        {exp.location[locale]}
+                      </span>
                     </>
                   )}
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                   <Calendar className="h-4 w-4" />
-                  {(() => {
-                    const startKey = `timeline.items.${exp.id}.startDate`;
-                    const endKey = `timeline.items.${exp.id}.endDate`;
-                    const tStart = t(startKey);
-                    const start = tStart === startKey ? exp.startDate : tStart;
-                    let end = "";
-                    if (exp.endDate) {
-                      const tEnd = t(endKey);
-                      end = tEnd === endKey ? exp.endDate : tEnd;
-                    } else {
-                      end = t("timeline.present");
-                    }
-                    return (
-                      <span>
-                        {start} - {end}
-                      </span>
-                    );
-                  })()}
+                  <span>
+                    {exp.startDate[locale]} -{" "}
+                    {exp.endDate ? exp.endDate[locale] : t("timeline.present")}
+                  </span>
                 </div>
-                {(() => {
-                  const descKey = `timeline.items.${exp.id}.description`;
-                  const tDesc = t(descKey);
-                  const resolved = tDesc === descKey ? exp.description : tDesc;
-                  return (
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      {resolved}
-                    </p>
-                  );
-                })()}
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  {exp.description[locale]}
+                </p>
                 {exp.technologies && exp.technologies.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (

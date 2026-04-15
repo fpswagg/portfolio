@@ -6,29 +6,24 @@ import { Search } from "lucide-react";
 import { ProjectCard } from "@/components/project-card";
 import { GitHubRepos } from "@/components/github-repos";
 import { seedProjects } from "@/lib/data/projects";
+import { projectCategoriesData } from "@/lib/data/loaders";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useI18n } from "@/lib/i18n";
 
-const categories = [
-  { value: "all", label: "Tous" },
-  { value: "web", label: "Web" },
-  { value: "mobile", label: "Mobile" },
-  { value: "tools", label: "Outils" },
-  { value: "other", label: "Autres" },
-];
-
 export default function ProjectsPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [searchQuery, setSearchQuery] = React.useState("");
   const [selectedCategory, setSelectedCategory] = React.useState("all");
 
   // Filtrer les projets seedés
   const filteredProjects = seedProjects.filter((project) => {
+    const title = project.title[locale];
+    const description = project.description[locale];
     const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.technologies.some((tech) =>
         tech.toLowerCase().includes(searchQuery.toLowerCase())
       );
@@ -85,7 +80,7 @@ export default function ProjectsPage() {
 
             {/* Filtres de catégorie */}
             <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
-              {categories.map((category) => (
+              {projectCategoriesData.items.map((category) => (
                 <Button
                   key={category.value}
                   variant={
@@ -95,7 +90,7 @@ export default function ProjectsPage() {
                   onClick={() => setSelectedCategory(category.value)}
                   className="shrink-0 h-12 px-6"
                 >
-                  {t(`projects.categories.${category.value}`)}
+                  {t(category.i18nKey)}
                 </Button>
               ))}
             </div>

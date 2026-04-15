@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "href": "/", "i18nKey": "nav.home" },
+    { "href": "/about", "i18nKey": "nav.about" },
+    { "href": "/projects", "i18nKey": "nav.projects" },
+    { "href": "/contact", "i18nKey": "nav.contact" }
+  ]
+}
+

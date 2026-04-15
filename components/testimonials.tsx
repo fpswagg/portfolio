@@ -5,6 +5,7 @@ import { Quote, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useI18n } from "@/lib/i18n";
+import { testimonialsData } from "@/lib/data/loaders";
 
 interface Testimonial {
   id: string;
@@ -33,37 +34,17 @@ const staggerContainer = {
 };
 
 export function Testimonials() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
-  const testimonials: Testimonial[] = [
-    {
-      id: "1",
-      name: t("testimonials.items.1.name"),
-      role: t("testimonials.items.1.role"),
-      company: t("testimonials.items.1.company"),
-      content: t("testimonials.items.1.content"),
-      avatar: "/placeholder-user.jpg",
-      rating: 5,
-    },
-    {
-      id: "2",
-      name: t("testimonials.items.2.name"),
-      role: t("testimonials.items.2.role"),
-      company: t("testimonials.items.2.company"),
-      content: t("testimonials.items.2.content"),
-      avatar: "/placeholder-user.jpg",
-      rating: 5,
-    },
-    {
-      id: "3",
-      name: t("testimonials.items.3.name"),
-      role: t("testimonials.items.3.role"),
-      company: t("testimonials.items.3.company"),
-      content: t("testimonials.items.3.content"),
-      avatar: "/placeholder-user.jpg",
-      rating: 5,
-    },
-  ];
+  const testimonials: Testimonial[] = testimonialsData.items.map((item) => ({
+    id: item.id,
+    name: item.name[locale],
+    role: item.role[locale],
+    company: item.company[locale],
+    content: item.content[locale],
+    avatar: item.avatar,
+    rating: item.rating,
+  }));
 
   return (
     <section className="relative py-20 md:py-32 overflow-hidden">
@@ -101,7 +82,7 @@ export function Testimonials() {
           whileInView="whileInView"
           viewport={{ once: true }}
         >
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <motion.div
               key={testimonial.id}
               variants={fadeInUp}

@@ -113,7 +113,7 @@ export async function GET(request: Request) {
         hasMore: end < repos.length,
         fallback: true,
       });
-    } catch (fallbackError) {
+    } catch {
       return NextResponse.json(
         { error: "Failed to fetch repositories" },
         { status: 500 }

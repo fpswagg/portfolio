@@ -2,9 +2,9 @@
 
 export interface Project {
   id: string;
-  title: string;
-  description: string;
-  longDescription?: string;
+  title: LocalizedString;
+  description: LocalizedString;
+  longDescription?: LocalizedString;
   image?: string;
   demoUrl?: string;
   githubUrl?: string;
@@ -17,14 +17,19 @@ export interface Project {
 
 export interface Experience {
   id: string;
-  title: string;
-  company: string;
-  location?: string;
-  startDate: string;
-  endDate?: string;
-  description: string;
+  title: LocalizedString;
+  company: LocalizedString;
+  location?: LocalizedString;
+  startDate: LocalizedString;
+  endDate?: LocalizedString | null;
+  description: LocalizedString;
   technologies?: string[];
   current?: boolean;
+}
+
+export interface LocalizedString {
+  en: string;
+  fr: string;
 }
 
 export interface Skill {

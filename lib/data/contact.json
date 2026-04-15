@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": "email",
+      "labelI18nKey": "contact.infoLabels.email",
+      "icon": "Mail",
+      "defaultValue": "contact@fpswagg.dev",
+      "envVar": "NEXT_PUBLIC_CONTACT_EMAIL",
+      "hrefPrefix": "mailto:"
+    },
+    {
+      "id": "phone",
+      "labelI18nKey": "contact.infoLabels.phone",
+      "icon": "Phone",
+      "defaultValue": "+33 X XX XX XX XX",
+      "envVar": "NEXT_PUBLIC_CONTACT_PHONE",
+      "hrefPrefix": "tel:"
+    },
+    {
+      "id": "location",
+      "labelI18nKey": "contact.infoLabels.location",
+      "icon": "MapPin",
+      "defaultValue": "France",
+      "envVar": "NEXT_PUBLIC_LOCATION",
+      "hrefPrefix": null
+    }
+  ]
+}
+

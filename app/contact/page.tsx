@@ -12,57 +12,32 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n";
+import { contactData, socialLinksData } from "@/lib/data/loaders";
 
-const contactInfo = [
-  {
-    icon: Mail,
-    labelKey: "email",
-    value: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@fpswagg.dev",
-    href: `mailto:${
-      process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@fpswagg.dev"
-    }`,
-  },
-  {
-    icon: Phone,
-    labelKey: "phone",
-    value: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+33 X XX XX XX XX",
-    href: `tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE || ""}`,
-  },
-  {
-    icon: MapPin,
-    labelKey: "location",
-    value: process.env.NEXT_PUBLIC_LOCATION || "France",
-    href: null,
-  },
-];
-
-const socialLinks = [
-  {
-    icon: Github,
-    label: "GitHub",
-    href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/fpswagg",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href:
-      process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com/in/fpswagg",
-  },
-  {
-    icon: Twitter,
-    label: "Twitter",
-    href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://x.com/fpswagg",
-  },
-];
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
-};
+const iconMap = { Mail, Phone, MapPin, Github, Linkedin, Twitter } as const;
 
 export default function ContactPage() {
   const { t } = useI18n();
+  const contactInfo = contactData.items.map((info) => {
+    const value =
+      (info.envVar ? process.env[info.envVar] : undefined) || info.defaultValue;
+    const href =
+      info.hrefPrefix === null ? null : `${info.hrefPrefix ?? ""}${value}`;
+    const Icon = iconMap[info.icon as keyof typeof iconMap] ?? Mail;
+    return {
+      id: info.id,
+      labelI18nKey: info.labelI18nKey,
+      value,
+      href,
+      Icon,
+    };
+  });
+
+  const socialLinks = socialLinksData.items.map((s) => {
+    const href = (s.envVar ? process.env[s.envVar] : undefined) || s.defaultUrl;
+    const Icon = iconMap[s.icon as keyof typeof iconMap] ?? Github;
+    return { id: s.id, labelI18nKey: s.i18nKey, href, Icon };
+  });
   return (
     <div className="relative">
       {/* Background decoration */}
@@ -103,13 +78,13 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {contactInfo.map((info) => (
-                  <div key={info.labelKey} className="flex items-start gap-4">
+                  <div key={info.id} className="flex items-start gap-4">
                     <div className="p-3 bg-gradient-to-br from-primary/10 to-cyan-500/10 rounded-xl shrink-0">
-                      <info.icon className="h-5 w-5 text-primary" />
+                      <info.Icon className="h-5 w-5 text-primary" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-muted-foreground mb-1">
-                        {t(`contact.infoLabels.${info.labelKey}`)}
+                        {t(info.labelI18nKey)}
                       </p>
                       {info.href ? (
                         <Link
@@ -138,16 +113,16 @@ export default function ContactPage() {
               <CardContent className="space-y-2">
                 {socialLinks.map((social) => (
                   <Link
-                    key={social.label}
+                    key={social.id}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-xl hover:bg-accent/50 transition-all group border border-transparent hover:border-primary/20"
                   >
                     <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <social.icon className="h-5 w-5 text-primary" />
+                      <social.Icon className="h-5 w-5 text-primary" />
                     </div>
-                    <span className="text-sm font-medium">{social.label}</span>
+                    <span className="text-sm font-medium">{t(social.labelI18nKey)}</span>
                   </Link>
                 ))}
               </CardContent>

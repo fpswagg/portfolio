@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "value": "all", "i18nKey": "projects.categories.all" },
+    { "value": "web", "i18nKey": "projects.categories.web" },
+    { "value": "mobile", "i18nKey": "projects.categories.mobile" },
+    { "value": "tools", "i18nKey": "projects.categories.tools" },
+    { "value": "other", "i18nKey": "projects.categories.other" }
+  ]
+}
+

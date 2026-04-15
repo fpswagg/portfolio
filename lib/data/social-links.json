@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "id": "github",
+      "i18nKey": "common.github",
+      "icon": "Github",
+      "defaultUrl": "https://github.com/fpswagg",
+      "envVar": "NEXT_PUBLIC_GITHUB_URL"
+    },
+    {
+      "id": "linkedin",
+      "i18nKey": "common.linkedin",
+      "icon": "Linkedin",
+      "defaultUrl": "https://linkedin.com/in/fpswagg",
+      "envVar": "NEXT_PUBLIC_LINKEDIN_URL"
+    },
+    {
+      "id": "twitter",
+      "i18nKey": "common.twitter",
+      "icon": "Twitter",
+      "defaultUrl": "https://x.com/fpswagg",
+      "envVar": "NEXT_PUBLIC_TWITTER_URL"
+    }
+  ]
+}
+

@@ -9,37 +9,21 @@ import { LanguageToggle } from "@/components/language-toggle";
 import { cn } from "@/lib/utils";
 import { Github, Linkedin, Menu, X, Twitter } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-
-const navItems = [
-  { href: "/", key: "nav.home" },
-  { href: "/about", key: "nav.about" },
-  { href: "/projects", key: "nav.projects" },
-  { href: "/contact", key: "nav.contact" },
-];
-
-const socials = [
-  {
-    href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com",
-    icon: Github,
-    label: "common.github",
-  },
-  {
-    href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com",
-    icon: Linkedin,
-    label: "common.linkedin",
-  },
-  {
-    href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://twitter.com",
-    icon: Twitter,
-    label: "common.twitter",
-  },
-];
+import { navigationData, socialLinksData } from "@/lib/data/loaders";
 
 export function Navigation() {
   const pathname = usePathname();
   const [hoveredPath, setHoveredPath] = React.useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const { t } = useI18n();
+  const iconMap = { Github, Linkedin, Twitter } as const;
+  const navItems = navigationData.items;
+  const socials = socialLinksData.items.map((s) => ({
+    href: (s.envVar ? process.env[s.envVar] : undefined) || s.defaultUrl,
+    Icon: iconMap[s.icon as keyof typeof iconMap] ?? Github,
+    labelKey: s.i18nKey,
+    id: s.id,
+  }));
 
   // Close mobile menu on route change
   React.useEffect(() => {
@@ -90,7 +74,7 @@ export function Navigation() {
                 onMouseEnter={() => setHoveredPath(item.href)}
                 onMouseLeave={() => setHoveredPath(null)}
               >
-                {t(item.key)}
+                {t(item.i18nKey)}
                 {(isActive || hoveredPath === item.href) && (
                   <motion.div
                     className="absolute bottom-1 left-2 right-2 h-0.5 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full"
@@ -111,14 +95,14 @@ export function Navigation() {
         <div className="hidden md:flex items-center gap-3">
           {socials.map((social) => (
             <Link
-              key={social.href}
+              key={social.id}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all"
             >
-              <social.icon className="h-4 w-4" />
-              <span className="sr-only">{t(social.label)}</span>
+              <social.Icon className="h-4 w-4" />
+              <span className="sr-only">{t(social.labelKey)}</span>
             </Link>
           ))}
           <div className="h-6 w-px bg-border mx-1" />
@@ -170,7 +154,7 @@ export function Navigation() {
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
-                    {t(item.key)}
+                    {t(item.i18nKey)}
                   </Link>
                 </motion.div>
               ))}
@@ -183,14 +167,14 @@ export function Navigation() {
                 <div className="flex items-center gap-2">
                   {socials.map((social) => (
                     <Link
-                      key={social.href}
+                      key={social.id}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all"
                     >
-                      <social.icon className="h-5 w-5" />
-                      <span className="sr-only">{t(social.label)}</span>
+                      <social.Icon className="h-5 w-5" />
+                      <span className="sr-only">{t(social.labelKey)}</span>
                     </Link>
                   ))}
                 </div>

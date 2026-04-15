@@ -1,0 +1,65 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": {
+        "en": "Software Engineering Student – HND",
+        "fr": "Étudiant en Génie Logiciel – HND"
+      },
+      "company": {
+        "en": "Institut Universitaire Siantou",
+        "fr": "Institut Universitaire Siantou"
+      },
+      "location": {
+        "en": "Yaounde, Cameroon",
+        "fr": "Yaoundé, Cameroun"
+      },
+      "startDate": { "en": "2022", "fr": "2022" },
+      "endDate": { "en": "2024", "fr": "2024" },
+      "current": false,
+      "description": {
+        "en": "Higher National Diploma (HND) training in Software Engineering, including academic projects, practical work, algorithms, software architectures, and web development.",
+        "fr": "Formation en Higher National Diploma (HND) en Software Engineering, comprenant des projets académiques, travaux pratiques, algorithmie, architectures logicielles et développement web."
+      },
+      "technologies": ["Java", "JavaScript", "HTML/CSS", "MySQL", "Git"]
+    },
+    {
+      "id": "2",
+      "title": { "en": "Developer Intern", "fr": "Stagiaire Développeur" },
+      "company": { "en": "Getexpertdev", "fr": "Getexpertdev" },
+      "location": {
+        "en": "Yaounde, Cameroon",
+        "fr": "Yaoundé, Cameroun"
+      },
+      "startDate": { "en": "Jan 2024", "fr": "Jan 2024" },
+      "endDate": { "en": "Feb 2024", "fr": "Feb 2024" },
+      "current": false,
+      "description": {
+        "en": "Built a custom CMS using WordPress for client needs, adapting to CMS workflows and delivering real-world features.",
+        "fr": "Réalisation d'un CMS sur mesure basé sur WordPress pour des besoins clients. Adaptation à l'écosystème CMS et collaboration sur des livrables concrets."
+      },
+      "technologies": ["WordPress", "PHP", "CSS", "Git"]
+    },
+    {
+      "id": "3",
+      "title": { "en": "Web Project – ESSACA", "fr": "Projet Web – ESSACA" },
+      "company": {
+        "en": "ESSACA – Higher Special School of Architecture of Cameroon",
+        "fr": "ESSACA – École Supérieure Spéciale d'Architecture du Cameroun"
+      },
+      "location": {
+        "en": "Yaounde, Cameroon",
+        "fr": "Yaoundé, Cameroun"
+      },
+      "startDate": { "en": "Dec 2024", "fr": "Dec 2024" },
+      "endDate": { "en": "2025", "fr": "2025" },
+      "current": false,
+      "description": {
+        "en": "Built a site for ESSACA at the end of 2024, followed by simple web tasks in 2025.",
+        "fr": "Réalisé un site pour ESSACA en fin d’année 2024, suivi de travaux web simples en 2025."
+      },
+      "technologies": ["Next.js", "React", "CSS", "Shadcn", "Git", "Express"]
+    }
+  ]
+}
+

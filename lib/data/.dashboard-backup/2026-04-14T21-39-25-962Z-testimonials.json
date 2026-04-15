@@ -1,0 +1,41 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "avatar": "/placeholder-user.jpg",
+      "rating": 5,
+      "name": { "en": "Jean-Marc Dubois", "fr": "Jean-Marc Dubois" },
+      "role": { "en": "CEO", "fr": "PDG" },
+      "company": { "en": "TechStart Solutions", "fr": "TechStart Solutions" },
+      "content": {
+        "en": "François-Philippe delivered an exceptional website for our company. His attention to detail and technical expertise exceeded our expectations. Highly recommended!",
+        "fr": "François-Philippe a livré un site web exceptionnel pour notre entreprise. Son souci du détail et son expertise technique ont dépassé nos attentes. Hautement recommandé !"
+      }
+    },
+    {
+      "id": "2",
+      "avatar": "/placeholder-user.jpg",
+      "rating": 5,
+      "name": { "en": "Marie Kouam", "fr": "Marie Kouam" },
+      "role": { "en": "Marketing Director", "fr": "Directrice Marketing" },
+      "company": { "en": "Creative Agency CM", "fr": "Creative Agency CM" },
+      "content": {
+        "en": "Working with François-Philippe was a pleasure. He understood our vision perfectly and created a modern, responsive website that truly represents our brand.",
+        "fr": "Travailler avec François-Philippe a été un plaisir. Il a parfaitement compris notre vision et créé un site moderne et responsive qui représente vraiment notre marque."
+      }
+    },
+    {
+      "id": "3",
+      "avatar": "/placeholder-user.jpg",
+      "rating": 5,
+      "name": { "en": "David Tchamba", "fr": "David Tchamba" },
+      "role": { "en": "Founder", "fr": "Fondateur" },
+      "company": { "en": "StartUp Hub", "fr": "StartUp Hub" },
+      "content": {
+        "en": "Professional, creative, and reliable. François-Philippe transformed our ideas into a beautiful, functional website. The project was delivered on time and within budget.",
+        "fr": "Professionnel, créatif et fiable. François-Philippe a transformé nos idées en un site web magnifique et fonctionnel. Le projet a été livré dans les délais et le budget."
+      }
+    }
+  ]
+}
+

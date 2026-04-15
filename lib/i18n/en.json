@@ -8,6 +8,9 @@
     "common": {
         "github": "GitHub",
         "linkedin": "LinkedIn",
+        "twitter": "Twitter",
+        "open_menu": "Open menu",
+        "close_menu": "Close menu",
         "carousel": {
             "prevSr": "Previous slide",
             "nextSr": "Next slide"
@@ -52,75 +55,11 @@
             "featured": "Featured Projects",
             "github": "GitHub Repos"
         },
-        "empty": "No projects found for this search.",
-        "items": {
-            "sarena": {
-                "title": "Sarena",
-                "description": "E-commerce with ExpressJS, Firebase, Telegram API and Puppeteer"
-            },
-            "desingora": {
-                "title": "Desingora",
-                "description": "Clean, responsive Next.js site built with shadcn — construction/BTP showcase and services."
-            },
-            "benediction-barber": {
-                "title": "Benediction Barber",
-                "description": "Promotional site for a barber shop: services, gallery, booking/contact, and hours."
-            },
-            "les-saveurs-du-cameroun": {
-                "title": "Les Saveurs Du Cameroun",
-                "description": "Restaurant presentation site — menu, about, reservations, gallery."
-            },
-            "le-grec-man": {
-                "title": "Le Grec Man",
-                "description": "Business landing page for a Greek food vendor — menu, hours, contact."
-            },
-            "demo-site-avocat": {
-                "title": "Demo site for a law firm",
-                "description": "Template/demo site — practice areas, lawyer profiles, contact & appointment request."
-            },
-            "file-station": {
-                "title": "File Station",
-                "description": "Academic Java Swing project with network sockets (file management)"
-            },
-            "agents-mod": {
-                "title": "Agents Mod (Minecraft 1.7.10)",
-                "description": "Legacy Minecraft Forge mod adding weapons, items, masks, and lore (2018–2019)."
-            },
-            "hospital-management-system": {
-                "title": "Kerry’s Tool (Hospital Management System)",
-                "description": "Full-stack hospital management dashboard for appointments, patient records and staff."
-            }
-        }
+        "empty": "No projects found for this search."
     },
     "timeline": {
         "current": "In progress",
-        "present": "Present",
-        "items": {
-            "1": {
-                "title": "Software Engineering Student – HND",
-                "company": "Institut Universitaire Siantou",
-                "location": "Yaounde, Cameroon",
-                "startDate": "2022",
-                "endDate": "2024",
-                "description": "Higher National Diploma (HND) training in Software Engineering, including academic projects, practical work, algorithms, software architectures, and web development."
-            },
-            "2": {
-                "title": "Developer Intern",
-                "company": "Getexpertdev",
-                "location": "Yaounde, Cameroon",
-                "startDate": "Jan 2024",
-                "endDate": "Feb 2024",
-                "description": "Built a custom CMS using WordPress for client needs, adapting to CMS workflows and delivering real-world features."
-            },
-            "3": {
-                "title": "Web Project – ESSACA",
-                "company": "ESSACA – Higher Special School of Architecture of Cameroon",
-                "location": "Yaounde, Cameroon",
-                "startDate": "Dec 2024",
-                "endDate": "2025",
-                "description": "Built a site for ESSACA at the end of 2024, followed by simple web tasks in 2025."
-            }
-        }
+        "present": "Present"
     },
     "repos": {
         "fallbackNotice": "Showing cached data. Live GitHub repositories will be available soon.",
@@ -188,27 +127,7 @@
     "testimonials": {
         "badge": "Testimonials",
         "title": "What Clients Say",
-        "subtitle": "Feedback from satisfied clients and collaborators I've worked with",
-        "items": {
-            "1": {
-                "name": "Jean-Marc Dubois",
-                "role": "CEO",
-                "company": "TechStart Solutions",
-                "content": "François-Philippe delivered an exceptional website for our company. His attention to detail and technical expertise exceeded our expectations. Highly recommended!"
-            },
-            "2": {
-                "name": "Marie Kouam",
-                "role": "Marketing Director",
-                "company": "Creative Agency CM",
-                "content": "Working with François-Philippe was a pleasure. He understood our vision perfectly and created a modern, responsive website that truly represents our brand."
-            },
-            "3": {
-                "name": "David Tchamba",
-                "role": "Founder",
-                "company": "StartUp Hub",
-                "content": "Professional, creative, and reliable. François-Philippe transformed our ideas into a beautiful, functional website. The project was delivered on time and within budget."
-            }
-        }
+        "subtitle": "Feedback from satisfied clients and collaborators I've worked with"
     },
     "featuredProjects": {
         "badge": "Featured Work",

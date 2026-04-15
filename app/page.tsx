@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { useI18n } from "@/lib/i18n";
 import { Testimonials } from "@/components/testimonials";
 import { FeaturedProjectsSection } from "@/components/featured-projects-section";
+import { techStackData } from "@/lib/data/loaders";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -24,6 +25,7 @@ const staggerContainer = {
 
 export default function HomePage() {
   const { t } = useI18n();
+  const iconMap = { Code2, Terminal, Sparkles } as const;
   return (
     <div className="relative">
       {/* Hero Section */}
@@ -117,7 +119,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      {/* <Testimonials /> */}
+      <Testimonials />
 
       {/* Featured Projects Section */}
       <FeaturedProjectsSection />
@@ -147,16 +149,10 @@ export default function HomePage() {
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
-            {[
-              { name: "Next.js", icon: Code2, color: "from-gray-500 to-gray-700" },
-              { name: "React", icon: Code2, color: "from-cyan-500 to-blue-500" },
-              { name: "TypeScript", icon: Terminal, color: "from-blue-600 to-blue-700" },
-              { name: "Node.js", icon: Terminal, color: "from-green-600 to-green-700" },
-              { name: "Tailwind CSS", icon: Sparkles, color: "from-cyan-400 to-teal-500" },
-              { name: "Prisma", icon: Code2, color: "from-indigo-500 to-purple-600" },
-              { name: "Supabase", icon: Code2, color: "from-green-500 to-emerald-600" },
-              { name: "PostgreSQL", icon: Terminal, color: "from-blue-500 to-indigo-600" },
-            ].map((tech, index) => (
+            {techStackData.items.map((tech, index) => {
+              const Icon =
+                iconMap[tech.icon as keyof typeof iconMap] ?? Code2;
+              return (
               <motion.div
                 key={tech.name}
                 initial={{ opacity: 0, y: 20 }}
@@ -167,10 +163,14 @@ export default function HomePage() {
                 className="group"
               >
                 <div className="relative h-full p-6 md:p-8 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-5 rounded-xl transition-opacity duration-300`} />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-0 group-hover:opacity-5 rounded-xl transition-opacity duration-300`}
+                  />
                   <div className="relative flex flex-col items-center gap-4">
-                    <div className={`p-3 bg-gradient-to-br ${tech.color} rounded-lg text-white`}>
-                      <tech.icon className="h-6 w-6 md:h-8 md:w-8" />
+                    <div
+                      className={`p-3 bg-gradient-to-br ${tech.gradient} rounded-lg text-white`}
+                    >
+                      <Icon className="h-6 w-6 md:h-8 md:w-8" />
                     </div>
                     <span className="font-semibold text-sm md:text-base text-center">
                       {tech.name}
@@ -178,7 +178,8 @@ export default function HomePage() {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>

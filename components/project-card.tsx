@@ -23,13 +23,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
-  const { t } = useI18n();
-  const titleKey = `projects.items.${project.id}.title`;
-  const descKey = `projects.items.${project.id}.description`;
-  const tTitle = t(titleKey);
-  const tDesc = t(descKey);
-  const resolvedTitle = tTitle === titleKey ? project.title : tTitle;
-  const resolvedDesc = tDesc === descKey ? project.description : tDesc;
+  const { t, locale } = useI18n();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -45,7 +39,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           <div className="relative h-48 md:h-56 w-full overflow-hidden bg-muted">
             <Image
               src={project.image || "/placeholder.svg"}
-              alt={project.title}
+              alt={project.title[locale]}
               fill
               className="object-cover transition-all duration-500 group-hover:scale-110"
             />
@@ -56,7 +50,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <CardHeader className="space-y-3">
           <div className="flex items-start justify-between gap-2">
             <CardTitle className="text-xl group-hover:text-primary transition-colors">
-              {resolvedTitle}
+              {project.title[locale]}
             </CardTitle>
             {project.featured && (
               <Badge variant="default" className="shrink-0 bg-gradient-to-r from-cyan-500 to-teal-500">
@@ -65,7 +59,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             )}
           </div>
           <CardDescription className="line-clamp-2 text-sm md:text-base leading-relaxed">
-            {resolvedDesc}
+            {project.description[locale]}
           </CardDescription>
         </CardHeader>
 

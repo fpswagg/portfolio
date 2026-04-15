@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "icon": "Code2",
+      "gradient": "from-gray-500 to-gray-700"
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "icon": "Code2",
+      "gradient": "from-cyan-500 to-blue-500"
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "icon": "Terminal",
+      "gradient": "from-blue-600 to-blue-700"
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "icon": "Terminal",
+      "gradient": "from-green-600 to-green-700"
+    },
+    {
+      "id": "tailwind",
+      "name": "Tailwind CSS",
+      "icon": "Sparkles",
+      "gradient": "from-cyan-400 to-teal-500"
+    },
+    {
+      "id": "prisma",
+      "name": "Prisma",
+      "icon": "Code2",
+      "gradient": "from-indigo-500 to-purple-600"
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "icon": "Code2",
+      "gradient": "from-green-500 to-emerald-600"
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "icon": "Terminal",
+      "gradient": "from-blue-500 to-indigo-600"
+    }
+  ]
+}
+

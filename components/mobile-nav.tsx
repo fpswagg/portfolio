@@ -14,13 +14,9 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/lib/i18n";
+import { navigationData } from "@/lib/data/loaders";
 
-const navItems = [
-  { href: "/", key: "nav.home" },
-  { href: "/about", key: "nav.about" },
-  { href: "/projects", key: "nav.projects" },
-  { href: "/contact", key: "nav.contact" },
-];
+const navItems = navigationData.items;
 
 export function MobileNav() {
   const pathname = usePathname();
@@ -56,7 +52,7 @@ export function MobileNav() {
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                {t(item.key)}
+                {t(item.i18nKey)}
               </Link>
             );
           })}
